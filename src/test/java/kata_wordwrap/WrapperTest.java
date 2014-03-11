@@ -12,5 +12,12 @@ public class WrapperTest {
 		String result = wrapper.wrap("", 1);
 		assertEquals("", result);
 	}
+	
+	@Test
+	public void inputShorterThanColumn() throws Exception {
+		Wrapper wrapper = new Wrapper();
+		String result = wrapper.wrap("somkiat", 10);
+		assertEquals("somkiat", result);
+	}
 
 }
