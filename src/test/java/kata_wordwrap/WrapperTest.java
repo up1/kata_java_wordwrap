@@ -19,5 +19,12 @@ public class WrapperTest {
 		String result = wrapper.wrap("somkiat", 10);
 		assertEquals("somkiat", result);
 	}
+	
+	@Test
+	public void wrapTwoWordAfterSpace() throws Exception {
+		Wrapper wrapper = new Wrapper();
+		String result = wrapper.wrap("word word", 6);
+		assertEquals("word\nword", result);
+	}
 
 }
