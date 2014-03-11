@@ -5,10 +5,12 @@ public class Wrapper {
 	public String wrap(String input, int column) {
 		if (input.length() <= column) {
 			return input;
-		} 
+		}
 		int space = (input.substring(0, column).lastIndexOf(' '));
 		if (space != -1) {
-			return (input.substring(0, space) + "\n" + wrap(input.substring(space+1), column));
+			return (input.substring(0, space) + "\n" + wrap(input.substring(space + 1), column));
+		} else if (input.charAt(column) == ' ') {
+			return (input.substring(0, column) + "\n" + wrap(input.substring(column + 1), column));
 		} else {
 			return (input.substring(0, column) + "\n" + wrap(input.substring(column), column));
 		}
