@@ -25,5 +25,11 @@ public class WrapperTest {
 		String result = wrapper.wrap("word word", 6);
 		assertEquals("word\nword", result);
 	}
+	
+	@Test
+	public void wrapThreeWordAfterFirstSpace() throws Exception {
+		String result = wrapper.wrap("word word word", 6);
+		assertEquals("word\nword\nword", result);
+	}
 
 }
