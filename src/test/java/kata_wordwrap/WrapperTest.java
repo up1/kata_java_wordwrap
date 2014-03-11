@@ -7,10 +7,7 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 
 @RunWith(Suite.class)
-@Suite.SuiteClasses({
-  WrapperTest.DegenerateTests.class,
-  WrapperTest.SplitWordTests.class
-})
+@Suite.SuiteClasses({ WrapperTest.DegenerateTests.class, WrapperTest.SplitWordTests.class })
 public class WrapperTest {
 
 	public static class DegenerateTests {
@@ -29,20 +26,26 @@ public class WrapperTest {
 		}
 
 	}
-	
+
 	public static class SplitWordTests {
 		Wrapper wrapper = new Wrapper();
-	    @Test
-	    public void splitOneWord() throws Exception {
-	    	String result = wrapper.wrap("word", 2);
+
+		@Test
+		public void splitOneWord() throws Exception {
+			String result = wrapper.wrap("word", 2);
 			assertEquals("wo\nrd", result);
-	    }
+		}
+
+		@Test
+		public void splitOneWordManyTimes() throws Exception {
+			String result = wrapper.wrap("abcdefghijk", 3);
+			assertEquals("abc\ndef\nghi\njk", result);
+		}
 	}
 
-	
 	public static class wrapWordsTest {
 		Wrapper wrapper = new Wrapper();
-		
+
 		@Test
 		public void wrapTwoWordAfterSpace() throws Exception {
 			String result = wrapper.wrap("word word", 6);

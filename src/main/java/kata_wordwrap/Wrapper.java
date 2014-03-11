@@ -6,7 +6,7 @@ public class Wrapper {
 		if(input.length() <= column) {
 			return input;
 		} else {
-			return (input.substring(0, column) + "\n" + input.substring(column));
+			return (input.substring(0, column) + "\n" + wrap(input.substring(column), column));
 		}
 	}
 
