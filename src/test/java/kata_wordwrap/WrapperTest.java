@@ -10,7 +10,7 @@ public class WrapperTest {
 	public void emptyString() {
 		Wrapper wrapper = new Wrapper();
 		String result = wrapper.wrap("", 1);
-		assertEquals("", "");
+		assertEquals("", result);
 	}
 
 }
