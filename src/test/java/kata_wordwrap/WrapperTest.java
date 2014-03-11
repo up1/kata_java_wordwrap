@@ -57,6 +57,12 @@ public class WrapperTest {
 			String result = wrapper.wrap("word word", 3);
 			assertEquals("wor\nd\nwor\nd", result);
 		}
+
+		@Test
+		public void wrapJustBeforeWordBoundary() throws Exception {
+			String result = wrapper.wrap("word word", 4);
+			assertEquals("word\nword", result);
+		}
 	}
 
 }
