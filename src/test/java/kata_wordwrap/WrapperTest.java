@@ -8,7 +8,8 @@ import org.junit.runners.Suite;
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
-  WrapperTest.DegenerateTests.class
+  WrapperTest.DegenerateTests.class,
+  WrapperTest.SplitWordTests.class
 })
 public class WrapperTest {
 
@@ -27,6 +28,15 @@ public class WrapperTest {
 			assertEquals("somkiat", result);
 		}
 
+	}
+	
+	public static class SplitWordTests {
+		Wrapper wrapper = new Wrapper();
+	    @Test
+	    public void splitOneWord() throws Exception {
+	    	String result = wrapper.wrap("word", 2);
+			assertEquals("wo\nrd", result);
+	    }
 	}
 
 	

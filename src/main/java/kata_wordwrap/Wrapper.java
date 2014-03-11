@@ -6,20 +6,8 @@ public class Wrapper {
 		if(input.length() <= column) {
 			return input;
 		} else {
-			StringBuilder output = new StringBuilder();
-			String[] inputArray = input.split(" ");
-			int countColumn = 0;
-			for (String string : inputArray) {
-				countColumn += string.length();
-				if(countColumn< column) {
-					output.append(string).append(" ");
-				} else {
-					output.append(string+"\n");
-				}
-			}
-			return output.toString();
+			return (input.substring(0, column) + "\n" + input.substring(column));
 		}
-		//return input.replace(" ", "\n");
 	}
 
 }
