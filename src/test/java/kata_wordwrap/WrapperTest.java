@@ -31,5 +31,11 @@ public class WrapperTest {
 		String result = wrapper.wrap("word word word", 6);
 		assertEquals("word\nword\nword", result);
 	}
+	
+	@Test
+	public void wrapThreeWordsAfterSecondSpace() throws Exception {
+		String result = wrapper.wrap("word word word", 11);
+		assertEquals("word word\nword", result);
+	}
 
 }
