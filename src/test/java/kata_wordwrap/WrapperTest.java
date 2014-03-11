@@ -7,11 +7,7 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 
 @RunWith(Suite.class)
-@Suite.SuiteClasses({ 
-	WrapperTest.DegenerateTests.class, 
-	WrapperTest.SplitWordTests.class, 
-	WrapperTest.WrapTwoWords.class,
-	WrapperTest.WrapWordsTest.class})
+@Suite.SuiteClasses({ WrapperTest.DegenerateTests.class, WrapperTest.SplitWordTests.class, WrapperTest.WrapTwoWords.class })
 public class WrapperTest {
 
 	public static class DegenerateTests {
@@ -52,30 +48,8 @@ public class WrapperTest {
 
 		@Test
 		public void wrapOnWordBoundary() throws Exception {
-			String result = wrapper.wrap("word word", 5);
+			String result = wrapper.wrap("word word", 6);
 			assertEquals("word\nword", result);
-		}
-	}
-
-	public static class WrapWordsTest {
-		Wrapper wrapper = new Wrapper();
-
-		@Test
-		public void wrapTwoWordAfterSpace() throws Exception {
-			String result = wrapper.wrap("word word", 5);
-			assertEquals("word\nword", result);
-		}
-
-		@Test
-		public void wrapThreeWordAfterFirstSpace() throws Exception {
-			String result = wrapper.wrap("word word word", 5);
-			assertEquals("word\nword\nword", result);
-		}
-
-		@Test
-		public void wrapThreeWordsAfterSecondSpace() throws Exception {
-			String result = wrapper.wrap("word word word", 10);
-			assertEquals("word word\nword", result);
 		}
 	}
 
