@@ -8,12 +8,16 @@ public class Wrapper {
 		}
 		int space = (input.substring(0, column).lastIndexOf(' '));
 		if (space != -1) {
-			return (input.substring(0, space) + "\n" + wrap(input.substring(space + 1), column));
+			return breakLine(input, space, column, 1);
 		} else if (input.charAt(column) == ' ') {
-			return (input.substring(0, column) + "\n" + wrap(input.substring(column + 1), column));
+			return breakLine(input, column, column, 1);
 		} else {
-			return (input.substring(0, column) + "\n" + wrap(input.substring(column), column));
+			return breakLine(input, column, column, 0);
 		}
+	}
+	
+	private String breakLine(String input, int position, int column, int gap) {
+		return (input.substring(0, position) + "\n" + wrap(input.substring(position + gap), column));
 	}
 
 }
